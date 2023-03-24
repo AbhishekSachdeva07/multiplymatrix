@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main()
+{
+    int a;
+    printf("Input size of matrix you want (equal matrix):\n");
+    scanf("%d",&a);
+    int arr[a][a] , arrr[a][a] , result[a][a]; 
+    printf("Input 1st matrix:\n");
+    for(int i=0; i<a; i++){
+        for (int j=0; j<a; j++){
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    printf("Input 2nd matrix:\n");
+    for(int i=0; i<a; i++){
+        for (int j=0; j<a; j++){
+            scanf("%d",&arrr[i][j]);
+        }
+    }
+    for(int i=0; i<a; i++){
+        for (int j=0; j<a; j++){
+            result[i][j]=0;
+            for(int k=0; k<a; k++){
+                result[i][j] += arr[i][k] * arrr[k][j];
+            }
+        }
+    }
+    printf("Result:\n");
+    for(int i=0; i<a; i++){
+        for (int j=0; j<a; j++){
+            printf("%d ",result[i][j]);
+        }printf("\n");
+    }
+    
+    return 0;
+}
